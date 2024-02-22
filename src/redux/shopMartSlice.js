@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-// bazarSlice.js => shopMartSlice.js
 
 const initialState = {
   productData: [],

@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
+// useLocation is a React Router hook that provides access to the current URL location in a React component
 import { useLocation } from "react-router-dom";
 import { MdOutlineStar } from "react-icons/md";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../redux/shopMartSlice";
 // React-Toastify allows you to add notifications
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer, toast } from "react-toastify";
 
 const Product = () => {
   const dispatch = useDispatch();
@@ -20,12 +21,14 @@ const Product = () => {
     <div>
       <div className="max-w-screen-xl mx-auto my-10 flex gap-10">
         <div className="w-2/5 relative">
+          {/* product image */}
           <img
             className="w-full h-[550px] object-cover"
             src={details.image}
             alt="productImg"
           />
           <div className="absolute top-4 right-0">
+            {/* product Sale */}
             {details.isNew && (
               <p className="bg-black text-white font-semibold font-titleFont px-8 py-1">
                 Sale
@@ -35,8 +38,10 @@ const Product = () => {
         </div>
         <div className="w-3/5 flex flex-col justify-center gap-12">
           <div>
+            {/* product title */}
             <h2 className="text-4xl font-semibold">{details.title}</h2>
             <div className="flex items-center gap-4 mt-3">
+            {/* product Price */}
               <p className="line-through font-base text-gray-500">
                 ${details.oldPrice}
               </p>
@@ -46,6 +51,7 @@ const Product = () => {
             </div>
           </div>
           <div className="flex items-center gap-2 text-base">
+            {/* product review */}
             <div className="flex">
               <MdOutlineStar />
               <MdOutlineStar />
@@ -58,6 +64,7 @@ const Product = () => {
           <p className="text-base text-gray-500 -mt-3">{details.description}</p>
           <div className="flex gap-4">
             <div className="w-52 flex items-center justify-between text-gray-500 gap-4 border p-3">
+            {/* product Quantity */}
               <p className="text-sm">Quantity</p>
               <div className="flex items-center gap-4 text-sm font-semibold">
                 <button
@@ -77,6 +84,7 @@ const Product = () => {
                 </button>
               </div>
             </div>
+            {/* product cart */}
             <button
               onClick={() =>
                 dispatch(
@@ -92,7 +100,7 @@ const Product = () => {
               }
               className="bg-black text-white py-3 px-6 active:bg-gray-800"
             >
-              add to cart
+              add to bag
             </button>
           </div>
           <p className="text-base text-gray-500">

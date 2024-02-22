@@ -18,10 +18,11 @@ const Banner = () => {
     setCurrentSlide(currentSlide === 3 ? 0 : (prev) => prev + 1);
   };
 
-
   return (
-    <div className="w-full h-auto overflow-x-hidden"> 
-    {/* py-[3rem] */}
+
+    // Banner
+
+    <div className="w-full h-auto overflow-x-hidden">
       <div className="w-screen h-[650px] relative">
         <div 
         style={{ transform: `translateX(-${currentSlide * 100}vw)` }} className="w-[400vw] h-full flex transition-transform duration-1000">
@@ -35,19 +36,19 @@ const Banner = () => {
             className="w-screen h-full object-cover"
             src={data[1]}
             alt="slide2"
-            loading="priority"
+            // loading="priority"
           />
           <img
             className="w-screen h-full object-cover"
             src={data[2]}
             alt="slide3"
-            loading="priority"
+            // loading="priority"
           />
           <img
             className="w-screen h-full object-cover"
             src={data[3]}
             alt="slide4"
-            loading="priority"
+            // loading="priority"
           />
         </div>
         <div className="absolute w-fit left-0 right-0 mx-auto flex gap-8 bottom-44">
